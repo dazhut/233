@@ -1,34 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Shiba - Cloudflare Pages</title>
+  <title>Shiba 3D</title>
   <style>
-    body { 
-      margin: 0; 
-      overflow: hidden; 
-      font-family: Arial, sans-serif;
-    }
-    canvas { 
-      display: block; 
-    }
-    #loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
-      border-radius: 5px;
-    }
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
   </style>
 </head>
 <body>
-  <div id="loading">加载中...</div>
+  <!-- 通过 CDN 引入 Three.js 和插件 -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.175.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.175.0/examples/js/controls/OrbitControls.js"></script>
   
-  <!-- 从 CDN 引入 Three.js 和插件（ES Modules 版本） -->
-  <script type="module" src="renderer.js"></script>
+  <!-- 主逻辑 -->
+  <script src="renderer.js"></script>
 </body>
 </html>
