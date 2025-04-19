@@ -2,7 +2,13 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.module.js';
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/controls/OrbitControls.js';
-
+// 调用 Worker API
+fetch('https://shiba-backend.workers.dev/api/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log('API Response:', data);
+    // 在这里处理返回的数据（如更新3D场景）
+  });
 // 初始化场景
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xdddddd);
