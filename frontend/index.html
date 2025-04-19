@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Shiba 3D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Shiba - Cloudflare Pages</title>
   <style>
-    body { margin: 0; overflow: hidden; }
-    canvas { display: block; }
+    body { 
+      margin: 0; 
+      overflow: hidden; 
+      font-family: Arial, sans-serif;
+    }
+    canvas { 
+      display: block; 
+    }
+    #loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
-  <!-- 使用 type="module" 加载ES模块 -->
+  <div id="loading">加载中...</div>
+  
+  <!-- 从 CDN 引入 Three.js 和插件（ES Modules 版本） -->
   <script type="module" src="renderer.js"></script>
 </body>
 </html>
